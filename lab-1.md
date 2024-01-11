@@ -1,10 +1,10 @@
-## Name : Harsh Vardhan Singh Chauhan
-## Roll no : 2022BCD0044
-## Batch no : 2
-## Domain name : 
-## IP address : 192.168.10.89
-## MAC : f4:39:09:2b:c2:fc
-## Date : Thursday 11 January 2024 03:40:38 PM IST
+### Name : Harsh Vardhan Singh Chauhan
+### Roll no : 2022BCD0044
+### Batch no : 2
+### Domain name : 
+### IP address : 192.168.10.89
+### MAC : f4:39:09:2b:c2:fc
+### Date : Thursday 11 January 2024 03:40:38 PM IST
 
 # Exercise - 1
 ![image](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/1c9c27f9-3454-416a-ada4-74ce65392cf5)
@@ -201,4 +201,25 @@ C:\>arp -a
 ```
 
 for Switch - checking MAC adress table
-> bo
+```
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+```console
+Switch>enable
+Switch#show mac-address-table
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+
+Switch#
+```
+```
+
