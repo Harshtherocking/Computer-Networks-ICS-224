@@ -1,9 +1,9 @@
-### Name : Harsh Vardhan Singh Chauhan
-### Roll no : 2022BCD0044
-### Batch no : 2
-### Domain name : 
-### IP address : `192.168.10.89`
-### MAC : `f4:39:09:2b:c2:fc`
+- Name : Harsh Vardhan Singh Chauhan
+- Roll no : 2022BCD0044
+- Batch no : 2
+- Domain name : 
+- IP address : `192.168.10.89`
+- MAC : `f4:39:09:2b:c2:fc`
 - Date : `Thursday 11 January 2024 03:40:38 PM IST`
 
 # Exercise - 1
