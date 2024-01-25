@@ -2,18 +2,21 @@
 - Name : Harsh Vardhan Singh Chauhan
 - Roll no : 2022BCD0044
 - Batch no : 2
-- Domain name : 
 - IP address : `192.168.10.89`
 - MAC : `f4:39:09:2b:c2:fc`
 - Date : `Thursday 25 January 2024 02:51:49 PM IST`
 
 # Exercise-1
 ### Aim : 
+To establish a connection between devices through copper straight-through wire using a Hub (Hub-PT). Observe the working of the Hub using ping packets and by running the Packet tracer in Simulation mode. (Send ping packets using the Traffic generator from PC-A).
 ### Requirements : 
+1) Cisco Packet Tracer 8.2.1
+2) Three Windows PC or Linux PC, Each PC must Have One NIC cards.
+3) RJ-45 Sockets – Copper straight-through Wire.
+4) Class C IP Address using Static IP configuration.
 ### Physical Connection : 
 ![image](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/eac3a4ef-d3e2-4335-8c8a-d72521de1eba)
 
-### Procedure :
 ### Observation : 
 pinging PC-B from PC-A
 ```console
@@ -61,6 +64,9 @@ C:\>arp -a
 
 # Exercise-2
 ### Aim : 
+To create two networks having the below architecture. All devices both the network must be able to communicate with each other. Give the addressing in such a manner. 
+Office → Printer, Laptop, PC connected through an IP-phone (i.e, IP-phone is connected to the switch)
+Home → PC, Laptop.
 ### Physical Connection : 
 ![image](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/8f053f90-c60a-4936-990b-d17be8064bb8)
 ### Observation : 
@@ -111,5 +117,9 @@ Approximate round trip times in milli-seconds:
     Minimum = 0ms, Maximum = 0ms, Average = 0ms
 ```
 sending packets from PC-A to Laptop-B and recieving acknowledgement packets from Laptop-B to PC-A
+![ex-2](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/aae0d149-0e9d-4612-afa8-d8db7309230e)
+
+- changing the gateway for Home and Office
+![ex-2_adv](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/811c99ee-5fa1-4247-b596-694e71ca41e9)
 
 
