@@ -52,6 +52,7 @@ Approximate round trip times in milli-seconds:
 ```
 sending packets from PC-C to PC-A and recieving acknowledgement packets from PC-A to PC-C
 ![ex-1](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/f25c4cbb-2e71-42db-aae6-a880a86d8e89)
+
 arp command on PC-A
 ```console
 C:\>arp -a
@@ -60,6 +61,8 @@ C:\>arp -a
   192.168.1.4           0060.3e43.908d        dynamic
   192.168.1.5           0002.4ac2.b533        dynamic
 ```
+
+
 
 
 # Exercise-2
@@ -125,4 +128,5 @@ sending packets from PC-A to Laptop-B and recieving acknowledgement packets from
 ![ex-2](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/aae0d149-0e9d-4612-afa8-d8db7309230e)
 
 changing the gateway for Home and Office and sending packet from PC-A to Laptop-B and recieving acknowledgement packets from Laptop-B to PC-A
+
 ![ex-2_adv](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/811c99ee-5fa1-4247-b596-694e71ca41e9)
