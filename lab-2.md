@@ -67,6 +67,11 @@ C:\>arp -a
 To create two networks having the below architecture. All devices both the network must be able to communicate with each other. Give the addressing in such a manner. 
 Office → Printer, Laptop, PC connected through an IP-phone (i.e, IP-phone is connected to the switch)
 Home → PC, Laptop.
+### Requirements : 
+1) Cisco Packet Tracer 8.2.1
+2) Three Windows PC or Linux PC, Each PC must Have One NIC cards.
+3) RJ-45 Sockets – Copper straight-through Wire.
+4) Class C IP Address using Static IP configuration.
 ### Physical Connection : 
 ![image](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/8f053f90-c60a-4936-990b-d17be8064bb8)
 ### Observation : 
@@ -119,7 +124,5 @@ Approximate round trip times in milli-seconds:
 sending packets from PC-A to Laptop-B and recieving acknowledgement packets from Laptop-B to PC-A
 ![ex-2](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/aae0d149-0e9d-4612-afa8-d8db7309230e)
 
-- changing the gateway for Home and Office
+changing the gateway for Home and Office and sending packet from PC-A to Laptop-B and recieving acknowledgement packets from Laptop-B to PC-A
 ![ex-2_adv](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/811c99ee-5fa1-4247-b596-694e71ca41e9)
-
-
