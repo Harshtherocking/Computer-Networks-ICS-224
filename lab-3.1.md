@@ -58,6 +58,7 @@ C:\>arp -a
   192.168.1.4           0006.2ad8.35b4        dynamic
 ```
 packet transition from PC-A to PC-C
+
 ![1-c-ezgif com-video-to-gif-converter](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/7e7e42b2-ce9c-4886-b129-f971d7396558)
 
 
@@ -112,4 +113,5 @@ C:\>arp -a
   192.168.1.4           0001.9613.d1e8        dynamic
 ```
 packet transition from PC-A to PC-D
+
 ![2-c-ezgif com-video-to-gif-converter](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/6b2aad2e-788d-439d-b5e4-fbf634b206df)
