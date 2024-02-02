@@ -148,4 +148,4 @@ Table
 | PC-E   | PC-B        | 0.014 sec       | 0.026 sec       |
 | PC-E   | PC-C        | 0.011 sec       | 0.022 sec       |
 
-`OFFICE to CLUB transmission and vica-versa take the most time because the message needs to pass through two routers`
+`OFFICE to CLUB transmission and vica-versa take the most time because the message needs to pass through two routers. Message passing delay increases with increase in number of network devices it passes through.`
