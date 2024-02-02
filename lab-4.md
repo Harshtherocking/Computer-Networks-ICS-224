@@ -71,3 +71,81 @@ message transition from PC-A to PC-F
 
 ![Screencastfrom02-02-24094942PMIST-ezgif com-video-to-gif-converter](https://github.com/Harshtherocking/Computer-Networks-ICS-224/assets/65885345/3dd28c56-2d8b-479a-8d53-a7e4dc834882)
 
+ARP command for PC-A
+```console
+C:\>arp  -a
+  Internet Address      Physical Address      Type
+  192.168.1.1           0040.0ba5.0b44        dynamic
+  192.168.1.3           0000.0c6e.2c0d        dynamic
+```
+`Mac address for PC-F is not visible in ARP command of PC-A. Only PC-B and Router-0 MAC addresses are visible`
+
+IP Route for Router-0
+```console
+Router>enable
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+C    10.0.0.0/8 is directly connected, Serial2/0
+C    192.168.1.0/24 is directly connected, FastEthernet0/0
+S    192.168.2.0/24 [1/0] via 10.0.0.2
+S    192.168.3.0/24 [1/0] via 10.0.0.2
+```
+IP Route for Router-1
+```console
+Router>enable
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+C    10.0.0.0/8 is directly connected, Serial2/0
+C    11.0.0.0/8 is directly connected, Serial3/0
+S    192.168.1.0/24 [1/0] via 10.0.0.1
+C    192.168.2.0/24 is directly connected, FastEthernet0/0
+S    192.168.3.0/24 [1/0] via 11.0.0.2
+```
+IP Route for Router-2
+```console
+Router>enable 
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+C    11.0.0.0/8 is directly connected, Serial2/0
+S    192.168.1.0/24 [1/0] via 11.0.0.1
+S    192.168.2.0/24 [1/0] via 11.0.0.1
+C    192.168.3.0/24 is directly connected, FastEthernet0/0
+```
+Table 
+| SOURCE | DESTINATION | ONE-WAY LATENCY | ROUND TRIP TIME |
+| ------ | ----------- | --------------- | --------------- |
+| PC-A   | PC-F        | 0.015 sec       | 0.027 sec       |
+| PC-A   | PC-D        | 0.010 sec       | 0.017 sec       |
+| PC-C   | PC-B        | 0.012 sec       | 0.021 sec       |
+| PC-C   | PC-E        | 0.014 sec       | 0.027 sec       |
+| PC-E   | PC-B        | 0.014 sec       | 0.026 sec       |
+| PC-E   | PC-C        | 0.011 sec       | 0.022 sec       |
+
+`OFFICE to CLUB transmission and vica-versa take the most time because the message needs to pass through two routers`
