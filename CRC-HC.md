@@ -1,7 +1,7 @@
 # CRC AND HAMMING CODE IMPLEMENTATION
-~ Harsh Vardhan Singh Chauhan 
-~ 2022BCD0044
-~ Python3 implementation
+- Harsh Vardhan Singh Chauhan 
+- 2022BCD0044
+- Python3 implementation
 
 ### CRC :- 
 ```python
