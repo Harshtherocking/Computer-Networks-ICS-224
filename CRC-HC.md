@@ -126,3 +126,179 @@ Enter M_rec(x) : 1110110010
 Remainder is  001
 Message is Corrputed (remainder != 1)
 ```
+### Hamming Code
+```python
+# binary str to integer
+def binary_to_int (binary_str : str) -> int : 
+    binary_str = binary_str[::-1]
+    rad = 1 
+    integer = 0
+    for digit in binary_str:
+        integer = integer + rad * int(digit)
+        rad = rad * 2
+    
+    return integer
+
+
+# integer to binary string
+def int_to_binary (integer : int) -> str  :
+    binary_str = ""
+    while (integer):
+        binary_str = binary_str + str(integer%2)
+        integer = integer // 2
+    binary_str = binary_str[::-1]
+
+    return binary_str
+
+
+# even parity
+def even_parity (data : str) -> bool :
+    n = 0 
+    for d in data:
+        n = n ^ int(d) 
+    return not bool(n)
+
+
+# to find redundant bits count 
+def find_redundant_bits (length:int) -> int : 
+    m = length
+    r = 1 
+    while True : 
+        if 2**r >=  m +r +1 :
+            return r
+        r+=1
+
+# to find redundant bits from msg recieved
+def find_redundant_bits_decode(length : int) -> int : 
+    m_r = length 
+    r = 1
+    while True :
+        if 2**r >= m_r + 1 :
+            return r
+        r+=1
+
+
+# get redundant bit position
+def get_r_pos(length : int) -> list[int] : 
+    pos = []
+    i = 0
+    while True :
+        if (2 ** i <= length):
+            pos.append(2**i)
+            i+=1
+        else:
+            return pos
+
+# get redundant bit relation with other bits
+def get_r_pos_rel(r_pos : list[int], length : int ) : 
+    pos_rel = { k:[] for k in r_pos }
+    for i in range (1, length + 1):
+        for r in r_pos: 
+            if i&r == r :
+                pos_rel[r].append(i)
+
+    return pos_rel
+
+
+# filling redundant bits with values
+def redundant_filler (pos : list[int] , msg : list[str]) -> bool : 
+    # print(pos)
+    # print(msg)
+    string = [ msg[i-1] for i in pos if msg[i-1].isdigit() ] 
+    if even_parity("".join(string)):
+        return False
+
+    return True
+
+
+
+# encoding use Hamming Code
+def HamEncode (dataword : str ) : 
+    r_bits = find_redundant_bits(len(dataword))
+    total_bits = len(dataword) + r_bits
+    
+    r_pos = get_r_pos(total_bits)
+    r_pos_rel = get_r_pos_rel(r_pos, total_bits)
+    
+    msg = list(dataword)
+    msg.reverse()
+    for pos in r_pos:
+        msg.insert(pos-1," ") 
+    
+    for r in r_pos_rel:
+        if redundant_filler(r_pos_rel[r], msg):
+            msg[r-1] = "1"
+        else:
+            msg[r-1] = "0"
+    
+    msg.reverse()
+    msg = "".join(msg)
+    print(f"Message Transmitted : {msg}")
+
+
+
+def HamDecode (dataword : str):
+    r_bits = find_redundant_bits_decode(len(dataword))
+    total_bits = len(dataword)
+    
+    r_pos = get_r_pos(total_bits)
+    r_pos_rel = get_r_pos_rel(r_pos, total_bits)
+    
+    msg = list(dataword)
+    msg.reverse()
+    
+    correct = []
+    for r in r_pos_rel:
+        if redundant_filler(r_pos_rel[r], msg):
+            correct.append("1")
+        else : 
+            correct.append("0")
+    
+    correct = correct[::-1]
+    correct = binary_to_int("".join(correct))
+    
+    if correct : 
+        print(f"The bit at {correct} st/nd/rd/th is corrupted")
+        if msg[correct-1] == "0":
+            msg[correct-1] = "1"
+        else:
+            msg[correct-1] = "0"
+        msg.reverse()
+        msg = "".join(msg)
+        print(f"Message after Correction : {msg}")
+    else:
+        print(f"Message Successfully Transmitted")
+    
+    return 
+
+
+# driver code
+if __name__ == "__main__":
+    print("SENDER's side:")
+    dataword = input("Enter the Dataword : ").strip()
+    # dataword = "10011011100"
+    HamEncode(dataword)
+    print("RECIVER's side:")
+    data_rec = input("Enter the Dataword recieved : ").strip()    
+    # data_rec  = "100110101100000"
+    HamDecode(data_rec) 
+```
+```console
+SENDER's side:
+Enter the Dataword : 10011011100
+Message Transmitted : 100110101100000
+
+RECIVER's side:
+Enter the Dataword recieved : 100110101100000
+Message Successfully Transmitted
+```
+```console
+SENDER's side:
+Enter the Dataword : 10011011100
+Message Transmitted : 100110101100000
+
+RECIVER's side:
+Enter the Dataword recieved : 10110111100000
+The bit at 9 st/nd/rd/th is corrupted
+Message after Correction : 10110011100000
+```
